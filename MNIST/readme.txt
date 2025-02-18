@@ -10,5 +10,20 @@ the data pints are not semmytrical when a class is more frequent than the other 
 NB:accuracy is not the preferred performance measure for classifiers especially when we are dealing with 
 a skewed dataset 
 
+3. Measuring performance :
+precion/recall trade off
+precision/recall trade-off
+Let me explain to you in an easy way:
+Imagine that you're a security guard.
+You have to make a decision about who you let into a building based on face recognition.
+Each person has a score between [0,1]. The decision threshold (th) determines who is allowed in.
+
+If th=0.5, anyone with a score above 0.5 is allowed.
+If th=0.7, anyone with a score above 0.7 is allowed.
+
+Precision & recall vs decision threshold:
+If we set th=0.7, we are more selective, so precision increases because we're letting in the most confident matches. However, we may miss some authorized people, so recall will decrease.
+If we set th=0.3, most authorized people are allowed in, so recall increases. But we are letting more unauthorized people in, so precision decreases.
+
 
 
