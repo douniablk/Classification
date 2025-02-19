@@ -1,4 +1,7 @@
+A-binary classification:
+
 1.why we should shuffle the data?
+
 some learning algorithms are sensitive to the order of the training  instances, 
 and they perform poorly if they get many similar instances in a row. 
 Shuffling the dataset ensures that this won’t happen
@@ -24,6 +27,27 @@ Precision & recall vs decision threshold:
 If we set th=0.7, we are more selective, so precision increases because we're letting in the most confident matches. However, we may miss some authorized people, so recall will decrease.
 If we set th=0.3, most authorized people are allowed in, so recall increases. But we are letting more unauthorized people in, so precision decreases.
 If someone says, “Let’s reach 99% precision,” you should ask, “At  what recall?”
+
+
+B-multicalss classification:
+1-OvR AND OvO:
+OvR(one virsus the rest):
+
+Train 10 binary classifiers, one for each digit (0-detector, 1-detector, etc.).
+For classification, get the decision score from each classifier and select the class with the highest score.
+Also known as one-versus-all.
+
+OvO(One-Versus-One):
+
+Train a binary classifier for every pair of digits (e.g., 0 vs 1, 0 vs 2, 1 vs 2, etc.).
+For N classes, train N × (N – 1) / 2 classifiers (45 classifiers for MNIST).
+For classification, run the image through all classifiers and select the class that wins the most duels.
+Preferred for algorithms that scale poorly with the size of the training set (e.g., Support Vector Machines).
+
+Algorithm Preference:
+
+OvO is preferred for algorithms that scale poorly with large training sets.
+OvR is preferred for most binary classification algorithms.
 
 
 
